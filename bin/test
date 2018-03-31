@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+docker build -t arithmetic-solver:latest ./client
+docker run -it --name arithmetic-solver-tester arithmetic-solver:latest npm test
+docker cp arithmetic-solver-tester:/app/test_output.json ./client
+docker rm arithmetic-solver-tester -f >> /dev/null

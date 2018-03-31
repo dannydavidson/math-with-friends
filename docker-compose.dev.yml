@@ -1,0 +1,11 @@
+version: '2'
+services:
+  client:
+    build: ./client
+    image: 'arithmetic-solver:latest'
+    container_name: "arithmetic-solver"
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./client/src:/app/src"
+    command: ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config ./webpack_config.js --hot --inline

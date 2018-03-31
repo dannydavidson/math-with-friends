@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+rm -rf ./client/dist
+docker build -t arithmetic-solver:latest ./client
+docker run -it --name arithmetic-solver-builder arithmetic-solver:latest
+docker cp arithmetic-solver-builder:/app/dist/. ./client/dist
+docker rm arithmetic-solver-builder -f >> /dev/null

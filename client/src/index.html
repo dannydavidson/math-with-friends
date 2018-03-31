@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet" type="text/css" />
+    <style>
+      * {
+        font-family: 'Roboto', sans-serif;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: #CDCDCD;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="arithmetic-solver"></div>
+    <script type="text/javascript" src="arithmetic-solver.js"></script>
+    <script>
+      ArithmeticSolver.init({
+        firebaseId: '<%= htmlWebpackPlugin.options.firebaseId %>',
+        firebaseApiKey: '<%= htmlWebpackPlugin.options.firebaseApiKey %>',
+        mountElement: document.getElementById('arithmetic-solver')
+      });
+    </script>
+  </body>
+</html>
